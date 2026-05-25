@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>東北 BEAUTY COLLECTION 2026｜ミーティング事前資料</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2128;
+    --border: #2a2d35;
+    --accent: #e8c96a;
+    --accent2: #7ec8a4;
+    --accent3: #e87c6a;
+    --text: #e8e6e0;
+    --muted: #8a8880;
+    --red: #e87c6a;
+    --yellow: #e8c96a;
+    --green: #7ec8a4;
+    --blue: #6ab0e8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14,15,17,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    height: 52px;
+    overflow-x: auto;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+    padding: 0 1rem;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+  nav a:first-child { border-left: 1px solid var(--border); }
+  nav a:hover { color: var(--accent); }
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-right: auto;
+    padding-right: 2rem;
+    border: none !important;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 38vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 4rem 3rem 3rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 80% 50%, rgba(232,201,106,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 20% 80%, rgba(126,200,164,0.05) 0%, transparent 60%);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+  }
+  .hero h1 span { color: var(--accent); }
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .hero-meta b { color: var(--text); }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+  /* SECTIONS */
+  section {
+    padding: 4rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .section-desc {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+  }
+
+  /* METRIC GRID */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+  .metric-card {
+    background: var(--surface);
+    padding: 1.4rem 1.2rem;
+  }
+  .metric-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.04em;
+  }
+  .metric-value {
+    font-family: 'DM Mono', monospace;
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .metric-value.green { color: var(--green); }
+  .metric-value.blue  { color: var(--blue); }
+  .metric-value.red   { color: var(--red); }
+  .metric-sub {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media(max-width:640px){ .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.6rem;
+  }
+  .compare-card.tohoku { border-top: 3px solid var(--yellow); }
+  .compare-card.kanagawa { border-top: 3px solid var(--green); }
+  .compare-card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .compare-card.tohoku h3 { color: var(--yellow); }
+  .compare-card.kanagawa h3 { color: var(--green); }
+  .compare-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    gap: 1rem;
+  }
+  .compare-row:last-child { border-bottom: none; }
+  .compare-row .val {
+    font-family: 'DM Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    flex-shrink: 0;
+  }
+  .compare-row .lbl { color: var(--muted); }
+
+  /* ISSUE CARDS */
+  .issue-list { display: flex; flex-direction: column; gap: 1rem; }
+  .issue-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 1.2rem;
+    align-items: start;
+  }
+  .issue-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    margin-top: 2px;
+  }
+  .badge-critical { background: rgba(232,124,106,0.18); color: var(--red); border: 1px solid rgba(232,124,106,0.3); }
+  .badge-high     { background: rgba(232,201,106,0.15); color: var(--yellow); border: 1px solid rgba(232,201,106,0.3); }
+  .badge-medium   { background: rgba(106,176,232,0.12); color: var(--blue); border: 1px solid rgba(106,176,232,0.25); }
+  .issue-title { font-size: 14px; font-weight: 700; margin-bottom: 0.4rem; }
+  .issue-body { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .issue-body strong { color: var(--text); font-weight: 500; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: var(--surface2);
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.6rem 2rem;
+    margin: 2rem 0;
+  }
+  .highlight-box h4 {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+  .highlight-box p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+  .highlight-box p strong { color: var(--text); }
+
+  /* ACTION TABLE */
+  .action-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 13px; }
+  .action-table th {
+    text-align: left;
+    padding: 0.7rem 1rem;
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+  }
+  .action-table td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .action-table tr:last-child td { border-bottom: none; }
+  .action-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .pri { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 3px; white-space: nowrap; }
+  .pri-s { background: rgba(232,124,106,0.18); color: var(--red); }
+  .pri-a { background: rgba(232,201,106,0.15); color: var(--yellow); }
+  .pri-b { background: rgba(106,176,232,0.12); color: var(--blue); }
+
+  /* SYSTEM SECTION */
+  .system-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media(max-width:640px){ .system-cols { grid-template-columns: 1fr; } }
+  .sys-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.4rem;
+  }
+  .sys-card.success { border-left: 3px solid var(--green); }
+  .sys-card.warning { border-left: 3px solid var(--red); }
+  .sys-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 0.8rem; }
+  .sys-card.success h4 { color: var(--green); }
+  .sys-card.warning h4 { color: var(--red); }
+  .sys-card ul { list-style: none; }
+  .sys-card ul li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 0.3rem 0;
+    padding-left: 1.2em;
+    position: relative;
+  }
+  .sys-card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--border);
+    font-size: 18px;
+    line-height: 1;
+    top: 0.35rem;
+  }
+  .sys-card.success ul li::before { color: var(--green); }
+  .sys-card.warning ul li::before { color: var(--red); }
+
+  /* VOICE QUOTES */
+  .voices { display: flex; flex-direction: column; gap: 0.8rem; margin: 1.5rem 0; }
+  .voice {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 0.8rem 1.2rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .voice p { font-size: 13px; color: var(--text); line-height: 1.7; }
+  .voice .source { font-size: 11px; color: var(--muted); margin-top: 0.3rem; font-family: 'DM Mono', monospace; }
+
+  /* BAR CHART */
+  .bar-chart { margin: 1.5rem 0; }
+  .bar-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.6rem; }
+  .bar-label { font-size: 12px; color: var(--muted); width: 180px; flex-shrink: 0; text-align: right; }
+  .bar-track { flex: 1; height: 20px; background: var(--surface2); border-radius: 3px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 3px; background: var(--accent); display: flex; align-items: center; padding-left: 6px; }
+  .bar-fill.green { background: var(--green); }
+  .bar-fill.blue  { background: var(--blue); }
+  .bar-pct { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--bg); font-weight: 500; }
+
+  /* ROAD MAP */
+  .roadmap { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 2rem; }
+  @media(max-width:700px){ .roadmap { grid-template-columns: 1fr 1fr; } }
+  .rm-item { background: var(--surface); padding: 1.4rem 1.2rem; }
+  .rm-phase { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .rm-title { font-size: 13px; font-weight: 700; margin-bottom: 0.8rem; }
+  .rm-list { list-style: none; }
+  .rm-list li { font-size: 12px; color: var(--muted); padding: 0.25rem 0; border-bottom: 1px solid var(--border); }
+  .rm-list li:last-child { border-bottom: none; }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+
+  /* DIVIDER */
+  .rule { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+  /* PILL */
+  .pill {
+    display: inline-block;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    margin: 2px;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .mb1 { margin-bottom: 1rem; }
+  .mb2 { margin-bottom: 2rem; }
+
+  /* AGENDA */
+  .agenda { display: flex; flex-direction: column; gap: 0; counter-reset: agenda; }
+  .agenda-item {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 1rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border);
+    counter-increment: agenda;
+  }
+  .agenda-item:last-child { border-bottom: none; }
+  .agenda-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    padding-top: 2px;
+  }
+  .agenda-num::before { content: counter(agenda, decimal-leading-zero); }
+  .agenda-title { font-size: 14px; font-weight: 700; margin-bottom: 0.2rem; }
+  .agenda-detail { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand nav-link">GAMO · 東北 BC 2026</span>
+  <a href="#overview">概要</a>
+  <a href="#comparison">前回比較</a>
+  <a href="#maker">メーカー評価</a>
+  <a href="#digital">デジタル施策</a>
+  <a href="#issues">課題整理</a>
+  <a href="#actions">改善アクション</a>
+  
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Meeting Pre-Read Materials · 2026.08 Sendai</div>
+    <h1>東北 <span>BEAUTY COLLECTION</span> 2026<br>ミーティング事前資料</h1>
+    <div class="hero-meta">
+      <div><b>開催日</b> 2026年8月31日（月）</div>
+      <div><b>会場</b> 仙台（予定）</div>
+      <div><b>目標来場者</b> 1,000名</div>
+      <div><b>前回神奈川開催</b> 2026年5月12日 パシフィコ横浜 ノース</div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <div class="container">
+    <div class="section-label">Section 01</div>
+    <div class="section-title">この資料について</div>
+    <div class="section-desc">本資料は8月の東北開催に向けたミーティングの事前インプットです。昨年東北初開催の振り返り・今年5月の神奈川開催（B.DOORS×BC）のアンケートデータ・回遊ログを統合して整理しています。</div>
+
+    <div class="agenda">
+      <div class="agenda-item">
+        <div class="agenda-num"></div>
+        <div>
+          <div class="agenda-title">前回東北開催（初回）の振り返りサマリー</div>
+          <div class="agenda-detail">来場者408名・メーカー80社のアンケートと社員評価をもとにした課題の共有</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num"></div>
+        <div>
+          <div class="agenda-title">2026年神奈川開催での成果と反省</div>
+          <div class="agenda-detail">552名の来場者、メーカー満足度4.68など定量データ。B.DOORS（就活）部分は参考情報として添付</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num"></div>
+        <div>
+          <div class="agenda-title">デジタルシステム（QRチェックイン・回遊ログ）の総括</div>
+          <div class="agenda-detail">申込〜受付〜回遊までを一貫して運用。仕組みは機能したが運用周知と来場者インセンティブが課題</div>
+        </div>
+      </div>
+      <div class="agenda-item">
+        <div class="agenda-num"></div>
+        <div>
+          <div class="agenda-title">東北2回目に向けた優先改善アクション</div>
+          <div class="agenda-detail">両開催のデータを統合した共通課題と、東北特有の論点を整理</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section id="comparison">
+  <div class="container">
+    <div class="section-label">Section 02</div>
+    <div class="section-title">2開催の数値比較</div>
+    <div class="section-desc">東北初回と神奈川2026の主要指標を並べて参照できるようにしています。</div>
+
+    <div class="compare-grid">
+      <div class="compare-card tohoku">
+        <h3>📍 東北 初回（2025年）</h3>
+        <div class="compare-row"><span class="lbl">来場者数</span><span class="val">408名</span></div>
+        <div class="compare-row"><span class="lbl">出展メーカー数</span><span class="val">80社</span></div>
+        <div class="compare-row"><span class="lbl">メーカー総合満足度</span><span class="val">88%</span></div>
+        <div class="compare-row"><span class="lbl">メーカー次回出展意向</span><span class="val">83%</span></div>
+        <div class="compare-row"><span class="lbl">来場者満足度</span><span class="val">84%</span></div>
+        <div class="compare-row"><span class="lbl">サービス導入意向</span><span class="val">73%</span></div>
+        <div class="compare-row"><span class="lbl">QRチェックイン</span><span class="val">未導入</span></div>
+        <div class="compare-row"><span class="lbl">スタンプラリー</span><span class="val">なし</span></div>
+      </div>
+      <div class="compare-card kanagawa">
+        <h3>📍 神奈川 BC 2026（5月）</h3>
+        <div class="compare-row"><span class="lbl">BC来場者数（申込）</span><span class="val">552名</span></div>
+        <div class="compare-row"><span class="lbl">出展メーカー数</span><span class="val">74社</span></div>
+        <div class="compare-row"><span class="lbl">メーカー総合満足度</span><span class="val">4.68/5</span></div>
+        <div class="compare-row"><span class="lbl">メーカー次回出展意向</span><span class="val">95%</span></div>
+        <div class="compare-row"><span class="lbl">来場者満足度</span><span class="val">4.18/5</span></div>
+        <div class="compare-row"><span class="lbl">イベント総費用</span><span class="val">720万円</span></div>
+        <div class="compare-row"><span class="lbl">QRチェックイン</span><span class="val">導入済み</span></div>
+        <div class="compare-row"><span class="lbl">回遊ログ取得率</span><span class="val">極めて低</span></div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>🎯 東北2回目の目標設定</h4>
+      <p>前回東北は408名の来場者で好評を得た。今回は<strong>目標1,000名</strong>と設定しており、単純に2.5倍のスケールアップが求められる。神奈川（552名）を上回る集客を達成するためには、<strong>「担当営業によるサロンアテンドの徹底」</strong>が引き続き最重要ドライバーになる。デジタルシステムとエンターテイメント要素はあくまでも補完手段として位置付ける。</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAKER SURVEY -->
+<section id="maker">
+  <div class="container">
+    <div class="section-label">Section 03</div>
+    <div class="section-title">神奈川開催 メーカーアンケート詳細</div>
+    <div class="section-desc">22社回答（出展74社中）。東北準備に転用できるインサイトを重点的に抽出しています。</div>
+
+    <div class="metric-grid mb2">
+      <div class="metric-card">
+        <div class="metric-label">総合満足度</div>
+        <div class="metric-value">4.68</div>
+        <div class="metric-sub">5点満点</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">来場者数の充足</div>
+        <div class="metric-value">4.68</div>
+        <div class="metric-sub">5点満点</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">搬入出オペレーション</div>
+        <div class="metric-value">4.77</div>
+        <div class="metric-sub">5点満点</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">スタッフ対応</div>
+        <div class="metric-value">4.59</div>
+        <div class="metric-sub">5点満点</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">出展料・コスト納得感</div>
+        <div class="metric-value">4.82</div>
+        <div class="metric-sub">5点満点</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">ターゲット層との面談</div>
+        <div class="metric-value green">4.23</div>
+        <div class="metric-sub">最も改善余地あり</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">次回出展意向（はい）</div>
+        <div class="metric-value">95%</div>
+        <div class="metric-sub">22社中21社</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.1rem; margin-bottom:1rem;">メーカーから寄せられた主な改善要望</div>
+    <div class="issue-list mb2">
+      <div class="issue-card">
+        <span class="issue-badge badge-critical">複数社</span>
+        <div>
+          <div class="issue-title">ブース配置の偏り</div>
+          <div class="issue-body">「著名メーカーが入口付近に集中している。奥まで均等に分散配置してほしい」。来場者の回遊が入口周辺で完結してしまい、奥のブースに足が向かない構造的問題。<strong>スタンプラリー導入と連動して解決できる可能性が高い。</strong></div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-critical">複数社</span>
+        <div>
+          <div class="issue-title">来場者とメーカーの識別困難</div>
+          <div class="issue-body">「来場者（サロン）なのかメーカー担当者なのかわからず声がけしにくい」。デミコスメティクス、soeasyなど複数社が言及。<strong>ガモウスタッフはイベントTシャツを着用して識別しやすくする。<strong>出展ブース担当者が一目でわかる表示（名札・識別タグ等）の統一が有効。</strong></div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">複数社</span>
+        <div>
+          <div class="issue-title">訪問ログのフィードバック希望</div>
+          <div class="issue-body">LOWBALなど複数社が「自社ブースに来場したサロン名・ガモウ担当営業名の情報をフィードバックしてほしい」と要望。<strong>今回の回遊ログシステムがまさにその目的で設計されたが、取得率が極めて低く期待に応えられなかった。東北での改善が急務。</strong></div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">少数</span>
+        <div>
+          <div class="issue-title">商談専用スペースの設置</div>
+          <div class="issue-body">「具体的な商談ができる区画が欲しい」（エステシモ）。ブース前の通路での立ち話では深い商談が難しい。席・テーブルを設けた専用エリアがあると商談成約率が上がる可能性あり。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-medium">チェックイン関連</span>
+        <div>
+          <div class="issue-title">QRシステムの操作案内不足</div>
+          <div class="issue-body">タカラベルモントから「A4パウチで各ブースに操作マニュアルを設置してほしい」という具体的提案あり。システム自体は高評価だが、<strong>来場者・メーカー双方への周知が不十分だった。</strong></div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-medium">後半時間帯</span>
+        <div>
+          <div class="issue-title">15時以降の来場者減少</div>
+          <div class="issue-body">アマトラなど複数社から「15時以降にサロン様が引いた」との指摘。後半も来場者を引き留める仕掛け（抽選・セミナー・体験会など）の設計が必要。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.1rem; margin-bottom:0.8rem;">メーカーの声（抜粋）</div>
+    <div class="voices">
+      <div class="voice">
+        <p>「今回より導入されたチェックイン機能は非常に良い仕掛けだと感じました。各ブースにお立ち寄りいただいたサロン様からのアンケート内容もご連携いただけますと幸いです」</p>
+        <div class="source">LOWBAL · 来場者フィードバック要望</div>
+      </div>
+      <div class="voice">
+        <p>「今までで一番スペースも広く、紹介しやすかったです。この度は展示会に参加させていただきありがとうございました！」</p>
+        <div class="source">アンドナイン · 総合評価 5/5</div>
+      </div>
+      <div class="voice">
+        <p>「搬送が今までで一番やりやすかったと感じました。訪問いただいたサロン様へのガモウ担当者・案内内容のメモ共有があると、その後の提案がやりやすくなります」</p>
+        <div class="source">中野製薬 · 情報連携を希望</div>
+      </div>
+      <div class="voice">
+        <p>「SNSでの事前告知が不十分。メーカーがリポストするなど、より拡散できた気がして惜しかった。スタンプラリー形式にして各ブースに立ち寄る仕組みを作るのはどうでしょうか」</p>
+        <div class="source">awaas · 評価2/5（最低評価）· 厳しい指摘として参照</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL -->
+<section id="digital">
+  <div class="container">
+    <div class="section-label">Section 04</div>
+    <div class="section-title">デジタルシステムの総括</div>
+    <div class="section-desc">申込〜QR受付〜ブース回遊ログまでを一貫して運用。システムとしての成功と、運用上の課題を分けて整理します。</div>
+
+    <div class="system-cols">
+      <div class="sys-card success">
+        <h4>✅ うまく機能した点</h4>
+        <ul>
+          <li>事前申込フォームによる来場者データの事前取得</li>
+          <li>QRコードによる入場証のデジタル化・受付行列の解消</li>
+          <li>飛び込み来場者にも対応できる柔軟な受付フロー</li>
+          <li>メーカー各社から「良い施策」と高評価</li>
+          <li>cetera登録促進との連動（40枚の新規登録）</li>
+        </ul>
+      </div>
+      <div class="sys-card warning">
+        <h4>⚠️ 機能しなかった点</h4>
+        <ul>
+          <li>回遊ログ取得率が極めて低い（552名来場に対し記録は少数）</li>
+          <li>「来場者の自発的タップ」に依存した設計が機能せず</li>
+          <li>システムの存在自体を知らない来場者が多数</li>
+          <li>スタッフ・来場者双方への運用説明が不十分</li>
+          <li>来場者にとってチェックインのメリットが不明瞭</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="border-color: var(--red);">
+      <h4 style="color:var(--red);">🔴 運営責任者 岩川からの反省コメント</h4>
+      <p>「申込〜受付〜ブースの回遊マップまでを一貫したシステムで運用しました。システムとしては成功した認識ですが、<strong>回遊ログを見ると550名近く来場していたのに記録が極端に少ない</strong>。これはひとえに、<strong>運用方法を運営側にも来場者側にも伝えきれなかったことが原因</strong>です。また、来場者が手間をかけてチェックインしたところでなんのメリットもなかったため、やる意味がなかったことも要因だと思います。東北ではブースにQRをそれぞれ設置して<strong>スタンプラリー形式にする</strong>など、来場者が自発的に動くインセンティブ設計が必要です」</p>
+    </div>
+
+    <div class="section-title" style="font-size:1.1rem; margin-bottom:1rem; margin-top:2rem;">回遊ログ分析からわかること</div>
+    <div class="issue-list mb2">
+      <div class="issue-card">
+        <span class="issue-badge badge-high">傾向</span>
+        <div>
+          <div class="issue-title">特定サロンが複数ブースを熱心に巡回している</div>
+          <div class="issue-body">回遊ログを精査すると、<strong>CREA本厚木（下村月人・阿部夏華）</strong>がほぼすべてのブースに記録されており、担当営業によるアテンドが機能した典型例と見られる。逆に言えば、アテンドのあったサロンとそうでないサロンの回遊数に大きな格差が出ている。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">傾向</span>
+        <div>
+          <div class="issue-title">全体的にBエリア（アリミノ・ミルボン等）への集中が目立つ</div>
+          <div class="issue-body">主要メーカーが集まるBエリアへの訪問ログが相対的に多く、G〜Iエリアでは急減している。<strong>ブース配置の工夫とスタンプラリーの組み合わせで奥のエリアへの誘導が必要</strong>。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-medium">walkinログ</span>
+        <div>
+          <div class="issue-title">飛び込み来場者のログが「walkin・4名来場」等で不明瞭</div>
+          <div class="issue-body">「walkin」扱いの記録が多く、実際に何名のサロン来場者が何を見たかを追えていない。東北ではブースにQRを設置し、来場者が読み取るスタンプラリー方式を採用する。来場者が自発的に読みたくなるインセンティブ（抽選・特典）の設計が鍵となる。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.1rem; margin-bottom:1rem;">東北での改善方針（デジタル）</div>
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th>施策</th>
+          <th>変更内容</th>
+          <th>期待効果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>スキャン方式の転換</strong></td>
+          <td>各ブースにQRコードを設置し、来場者がスキャン → スタンプ取得・抽選参加へ連動</td>
+          <td>来場者が自発的に動くインセンティブ設計による取得率改善。メーカーへの訪問フィードバック実現</td>
+        </tr>
+        <tr>
+          <td><strong>スタンプラリー連動</strong></td>
+          <td>各ブースにQRを設置し、一定数スキャンで抽選応募・特典付与</td>
+          <td>来場者の回遊インセンティブ創出。奥のブースまで誘導</td>
+        </tr>
+        <tr>
+          <td><strong>受付時アナウンス義務化</strong></td>
+          <td>入場時に必ずスタンプラリーの説明を行う（台本化）</td>
+          <td>システム認知率の向上</td>
+        </tr>
+        <tr>
+          <td><strong>A4パウチ各ブース設置</strong></td>
+          <td>操作方法を記載したカードをブースごとに常設</td>
+          <td>メーカー自身が来場者に説明できる</td>
+        </tr>
+        <tr>
+          <td><strong>ガラポン連動の見直し</strong></td>
+          <td>ハズレなし設計。cetera引換券を全員参加賞として配布</td>
+          <td>抽選への参加率向上・cetera登録促進</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ISSUES -->
+<section id="issues">
+  <div class="container">
+    <div class="section-label">Section 05</div>
+    <div class="section-title">2開催統合・優先課題マップ</div>
+    <div class="section-desc">東北初回・神奈川2026の両アンケートで共通して指摘された課題を優先度別に整理。東北2回目で必ず手を打つべき項目を特定します。</div>
+
+    <div class="issue-list">
+      <div class="issue-card">
+        <span class="issue-badge badge-critical">S優先</span>
+        <div>
+          <div class="issue-title">担当営業によるサロンアテンドの徹底</div>
+          <div class="issue-body">両開催で最も根本的な課題。「来場者が一人で回っている」「担当営業がアテンドしきれていない」という指摘が3者アンケート全体で最多。<strong>担当営業が集客したサロンを必ずアテンドする</strong>ことが、来場者満足・メーカー満足・売上貢献のすべてに直結する。事前にアテンド担当割当表を作成し、複数名でのローテーション運用を設計する。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-critical">S優先</span>
+        <div>
+          <div class="issue-title">回遊ログ・スタンプラリーの設計刷新</div>
+          <div class="issue-body">神奈川での「仕組みはあるが機能しなかった」という失敗を踏まえ、<strong>来場者の自発性に依存しない設計</strong>へ完全転換。ブース設置QR＋スタンプラリー形式で、来場者にとってのメリット（抽選・特典）と運営にとってのメリット（ログデータ）を同時に実現する。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-critical">S優先</span>
+        <div>
+          <div class="issue-title">来場者・メーカー識別の整備</div>
+          <div class="issue-body">東北初回・神奈川双方でメーカーから「声がけしにくい」と指摘が続く。<strong>ガモウスタッフはイベントTシャツを着用</strong>し、出展ブース担当者には識別名札を統一装着する。来場サロン側へのネームホルダー配布は実運用上困難なため、メーカー・ガモウ側の識別を優先する。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">A優先</span>
+        <div>
+          <div class="issue-title">ブース配置の動線最適化</div>
+          <div class="issue-body">「著名メーカーが入口集中・奥に人が来ない」は両開催の共通課題。<strong>人気メーカー・ブランド力のあるメーカーを会場奥に戦略配置</strong>し、スタンプラリーと組み合わせて来場者を奥まで引き込む。関連ジャンルのメーカーを隣接配置することで効率的な回遊を促す。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">A優先</span>
+        <div>
+          <div class="issue-title">会場案内・サイン計画</div>
+          <div class="issue-body">東北初回で「会場案内がわかりにくい」が3者共通指摘の第1位。神奈川のグランデックスからも「案内が分かりにくい」との指摘あり。<strong>ゾーン別カラーコーディング・要所への誘導スタッフ配置・デジタルマップのQR設置を徹底する。</strong></div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">A優先</span>
+        <div>
+          <div class="issue-title">後半時間帯の来場者維持</div>
+          <div class="issue-body">神奈川で「15時以降に客足が引いた」という複数社の指摘。<strong>後半にヤマを作るコンテンツ（セミナー・実演・抽選メイン回）</strong>を配置し、来場者を最後まで引き留める仕掛けを設計する。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-high">A優先</span>
+        <div>
+          <div class="issue-title">メーカー特別企画と受注クロージングの仕組み化</div>
+          <div class="issue-body">神奈川開催で最大の反省点として挙がった。720万円の費用をかけて集客したのに、<strong>受注フローが整備されていないまま当日を迎えてしまった</strong>。3ヶ月前からメーカーへの特別企画依頼・受注票様式の合意・事務オペレーションの設計を開始する。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-medium">B優先</span>
+        <div>
+          <div class="issue-title">SNS事前告知とメーカー連携拡散</div>
+          <div class="issue-body">awaasから「SNS事前告知が不十分。メーカーがリポストするなど拡散できればよかった」との指摘。<strong>出展メーカーへのSNS投稿テンプレート提供と、ガモウ公式アカウントからの計画的告知</strong>を事前に設計する。東北でも有効な集客ドライバーになりうる。</div>
+        </div>
+      </div>
+      <div class="issue-card">
+        <span class="issue-badge badge-medium">B優先</span>
+        <div>
+          <div class="issue-title">メーカー接客姿勢のばらつき</div>
+          <div class="issue-body">東北初回からの継続課題。積極的なメーカーと受け身のメーカーの差が来場者体験に直結する。<strong>事前説明会での接客基準の共有・当日限定キャンペーン準備の義務付け</strong>など、メーカー側の準備水準を底上げする仕掛けが必要。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- B.DOORS参考情報 -->
+    <div class="highlight-box" style="border-color: var(--blue); margin-top: 2rem;">
+      <h4 style="color:var(--blue);">📎 参考：B.DOORS（就活）部分のインサイト（東北では非実施）</h4>
+      <p>神奈川では BC と同日に美容学生向け就活イベント「B.DOORS」を同時開催。東北では就活部分は実施しないが、参考として以下を共有。<br><br>
+      <strong>学生853名参加</strong>（9校）。サロン選びで重視するのは「人間関係・雰囲気（63%）」「給与・福利厚生（63%）」。就職情報を探す媒体はSNS（61%）が圧倒的1位。サロン見学のハードルは「一人で行くのが不安（60%）」が最大。<br><br>
+      また、<strong>出展サロン（28社）の満足度は4.18/5</strong>と高く、見学・アルバイト希望者を複数名獲得したサロンが多数。翌日即来店のケースも報告されており、就活イベントとしては成功した評価。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIONS -->
+<section id="actions">
+  <div class="container">
+    <div class="section-label">Section 06</div>
+    <div class="section-title">東北2回目 優先アクション一覧</div>
+    <div class="section-desc">「絶対やること（S）」から順に整理。担当・期限の確定はミーティングで行います。</div>
+
+    <table class="action-table">
+      <thead>
+        <tr>
+          <th style="width:60px">優先度</th>
+          <th>アクション</th>
+          <th>根拠・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="pri pri-s">S</span></td>
+          <td><strong>担当営業によるサロンアテンドの徹底</strong><br>事前にアテンド担当割当表を作成。複数名ローテーション運用を設計する</td>
+          <td>両開催・3者アンケート共通の最重要課題。BC本来の商談機能を実現する唯一の手段</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-s">S</span></td>
+          <td><strong>スタンプラリー型回遊システムへの転換</strong><br>各ブースにQRを設置し、来場者スキャン → スタンプ取得・抽選参加へ連動</td>
+          <td>神奈川での回遊ログ失敗の直接的改善策。メーカーへの訪問フィードバック実現にも直結</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-s">S</span></td>
+          <td><strong>ブース担当者・スタッフの識別整備</strong><br>ガモウスタッフはイベントTシャツ着用。出展ブース担当者は識別名札を統一装着</td>
+          <td>東北初回・神奈川の両方でメーカーから強い要望。メーカーの接客活性化に直結</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-a">A</span></td>
+          <td><strong>ブース配置の動線設計見直し</strong><br>人気メーカーを会場奥に分散、ジャンル別ゾーニング</td>
+          <td>複数メーカーから指摘。スタンプラリーとセットで効果を最大化</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-a">A</span></td>
+          <td><strong>会場サイン・案内計画の事前設計</strong><br>ゾーン別カラーコーディング、要所への誘導スタッフ配置</td>
+          <td>東北初回での第1位課題。神奈川でも継続指摘あり</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-a">A</span></td>
+          <td><strong>メーカー特別企画・受注クロージング設計</strong><br>3ヶ月前から事務・メーカー・営業の三者で受注フローを文書化</td>
+          <td>神奈川最大の反省点。720万円投資に対して収益化できなかった構造的問題</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-a">A</span></td>
+          <td><strong>後半コンテンツの設計</strong><br>15時以降にセミナー・実演・抽選メイン回など来場者を引き留める仕掛け</td>
+          <td>神奈川での「15時以降に客足が引いた」複数社の指摘に対応</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-a">A</span></td>
+          <td><strong>ガラポン設計の見直し</strong><br>ハズレなし設計。cetera引換券を全員参加賞として配布</td>
+          <td>神奈川の「外れが多い」という声への対応。cetera登録促進との連動も維持</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-b">B</span></td>
+          <td><strong>SNS事前告知・メーカー拡散連携</strong><br>投稿テンプレート提供、ガモウ公式からの計画的告知</td>
+          <td>awaasなどから指摘。集客を1,000名に向けて拡大するために必要</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-b">B</span></td>
+          <td><strong>メーカー向け事前説明会の開催</strong><br>接客基準・当日フロー・特別企画準備の共有会</td>
+          <td>メーカーの接客姿勢ばらつきを底上げ。東北初回から継続課題</td>
+        </tr>
+        <tr>
+          <td><span class="pri pri-b">B</span></td>
+          <td><strong>運営体制の分散化</strong><br>ポジション別リーダー配置、権限委譲の明確化</td>
+          <td>東北初回で特定人物への集中が課題。神奈川メンバー不在を前提に自力運営体制を構築</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<footer>
+  <div>東北 BEAUTY COLLECTION 2026 — ミーティング事前資料</div>
+  <div style="margin-top:0.4rem;">GAMO 神奈川ブランチ 運営事務局 · 2026年5月作成</div>
+  <div style="margin-top:0.6rem; font-size:11px;">
+    参照データ：神奈川BC2026メーカーアンケート（22社）／来場者申込データ（552名）／回遊ログ／東北初回キックオフ考察資料
+  </div>
+</footer>
+
+</body>
+</html>
